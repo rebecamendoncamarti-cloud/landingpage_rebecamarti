@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <title>Investir na maré que muda vidas</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style.css">
 </head>
+
 <body>
     <header>
         <nav>
@@ -24,15 +26,21 @@
         <section class="titulo-area">
             <h1>Investir na maré que muda vidas</h1>
             <h2>Mar, Surf, Comunidade</h2>
-            <button class="cta" onclick="document.getElementById('equipa').scrollIntoView({behavior:'smooth'});">Junte-se à nossa missão</button>
+            <button class="cta"
+                onclick="document.getElementById('equipa').scrollIntoView({behavior:'smooth'});">Junte-se à nossa
+                missão</button>
         </section>
 
         <section id="metodologia" class="content-row">
             <div class="content-text">
                 <h2>A nossa metodologia</h2>
                 <p>
-                    Na Wave by wave, utilizamos atividades de surf therapy para ajudar as comunidades em risco social. Junto dos nossos profissionais de surf e psicologia clínica, realizamos atividades para os jovens e crianças em risco de institucionalização, ou que já estejam institucionalizados.
-                    Em Portugal existe uma totalidade de 6840 jovens e crianças nesta situação. Multiplicando este número pelo custo social ao longo da vida de um jovem, 250 mil €, resulta em um valor de cerca de 20 mil milhões de euros.
+                    Na Wave by wave, utilizamos atividades de surf therapy para ajudar as comunidades em risco social.
+                    Junto dos nossos profissionais de surf e psicologia clínica, realizamos atividades para os jovens e
+                    crianças em risco de institucionalização, ou que já estejam institucionalizados.
+                    Em Portugal existe uma totalidade de 6840 jovens e crianças nesta situação. Multiplicando este
+                    número pelo custo social ao longo da vida de um jovem, 250 mil €, resulta em um valor de cerca de 20
+                    mil milhões de euros.
                 </p>
             </div>
             <div class="content-image">
@@ -47,8 +55,11 @@
             <div class="content-text">
                 <h2>Parceiros e estudos relevantes</h2>
                 <p>
-                    A Wave by wave conta com a ajuda de vários parceiros, que fazem parte desta mudança. Uns ajudam-nos a chegar às sociedades em risco, outros prestam-nos instrutores que querem fazer a diferença na vida dos jovens, e alguns ajudaram-nos a mostrar ao mundo o quanto a surf therapy faz diferença na vida destas comunidades. 
-                    O trabalho da Caparica Surf club em parceria com a Wave by wave está 
+                    A Wave by wave conta com a ajuda de vários parceiros, que fazem parte desta mudança. Uns ajudam-nos
+                    a chegar às sociedades em risco, outros prestam-nos instrutores que querem fazer a diferença na vida
+                    dos jovens, e alguns ajudaram-nos a mostrar ao mundo o quanto a surf therapy faz diferença na vida
+                    destas comunidades.
+                    O trabalho da Caparica Surf club em parceria com a Wave by wave está
                     <a href="https://www.google.com" target="_blank">aqui</a>.
                 </p>
             </div>
@@ -80,11 +91,11 @@
     </footer>
     <script>
         // Form validation and submission logic
-        document.getElementById('contactForm').addEventListener('submit', async function(event) {
+        document.getElementById('contactForm').addEventListener('submit', async function (event) {
             event.preventDefault();
             let valid = true;
             let requiredFields = ['nome', 'apelido', 'email', 'empresa'];
-            requiredFields.forEach(function(field){
+            requiredFields.forEach(function (field) {
                 let input = document.getElementById(field);
                 if (!input.value) {
                     input.classList.add("error");
@@ -112,11 +123,12 @@
         });
 
         // Remove red underline when user starts typing
-        document.querySelectorAll('input[required]').forEach(function(input){
-            input.addEventListener('input', function(){
+        document.querySelectorAll('input[required]').forEach(function (input) {
+            input.addEventListener('input', function () {
                 input.classList.remove('error');
             });
         });
     </script>
 </body>
+
 </html>
