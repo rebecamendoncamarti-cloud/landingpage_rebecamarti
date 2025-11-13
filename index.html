@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Investir na maré que muda vidas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo-area">
+                <img src="Images/picture 1.png" alt="Wave by Wave Logo" class="logo">
+                <span class="header-line">WAVE BY WAVE</span>
+            </div>
+            <ul class="menu">
+                <li><a href="#metodologia">A nossa metodologia</a></li>
+                <li><a href="#parceiros">Parceiros e estudos relevantes</a></li>
+                <li><a href="#equipa">Junte-se à nossa missão</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="titulo-area">
+            <h1>Investir na maré que muda vidas</h1>
+            <h2>Mar, Surf, Comunidade</h2>
+            <button class="cta" onclick="document.getElementById('equipa').scrollIntoView({behavior:'smooth'});">Junte-se à nossa missão</button>
+        </section>
+
+        <section id="metodologia" class="content-row">
+            <div class="content-text">
+                <h2>A nossa metodologia</h2>
+                <p>
+                    Na Wave by wave, utilizamos atividades de surf therapy para ajudar as comunidades em risco social. Junto dos nossos profissionais de surf e psicologia clínica, realizamos atividades para os jovens e crianças em risco de institucionalização, ou que já estejam institucionalizados.
+                    Em Portugal existe uma totalidade de 6840 jovens e crianças nesta situação. Multiplicando este número pelo custo social ao longo da vida de um jovem, 250 mil €, resulta em um valor de cerca de 20 mil milhões de euros.
+                </p>
+            </div>
+            <div class="content-image">
+                <img src="Images/picture 2.jpg" alt="Surf therapy em ação">
+            </div>
+        </section>
+
+        <section id="parceiros" class="content-row reverse">
+            <div class="content-image">
+                <img src="Images/picture 3.jpg" alt="Parceiros Wave by Wave">
+            </div>
+            <div class="content-text">
+                <h2>Parceiros e estudos relevantes</h2>
+                <p>
+                    A Wave by wave conta com a ajuda de vários parceiros, que fazem parte desta mudança. Uns ajudam-nos a chegar às sociedades em risco, outros prestam-nos instrutores que querem fazer a diferença na vida dos jovens, e alguns ajudaram-nos a mostrar ao mundo o quanto a surf therapy faz diferença na vida destas comunidades. 
+                    O trabalho da Caparica Surf club em parceria com a Wave by wave está 
+                    <a href="file:///C:/Users/marga/OneDrive/Ambiente%20de%20Trabalho/Landing%20Page%20-%20Caparica%20Surf%20Club%20-%20C%C3%B3pia/inditex.html" target="_blank">aqui</a>.
+                </p>
+            </div>
+        </section>
+
+        <section id="equipa" class="formrow">
+            <div class="form-image">
+                <img src="Images/picture 4 .png" alt="equipa Wave by Wave">
+            </div>
+            <form class="form" id="contactForm" autocomplete="off">
+                <h2>Junte-se à nossa missão</h2>
+                <label for="nome">Nome*</label>
+                <input type="text" id="nome" name="nome" required>
+                <label for="apelido">Apelido*</label>
+                <input type="text" id="apelido" name="apelido" required>
+                <label for="email">Email empresarial*</label>
+                <input type="email" id="email" name="email" required>
+                <label for="empresa">Empresa*</label>
+                <input type="text" id="empresa" name="empresa" required>
+                <label for="telefone">Telefone (opcional)</label>
+                <input type="text" id="telefone" name="telefone">
+                <button type="submit">Submeter</button>
+                <div id="form-message"></div>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <small>&copy; 2025 Wave by Wave</small>
+    </footer>
+    <script>
+        // Form validation and submission logic
+        document.getElementById('contactForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            let valid = true;
+            let requiredFields = ['nome', 'apelido', 'email', 'empresa'];
+            requiredFields.forEach(function(field){
+                let input = document.getElementById(field);
+                if (!input.value) {
+                    input.classList.add("error");
+                    valid = false;
+                } else {
+                    input.classList.remove("error");
+                }
+            });
+
+            if (!valid) return;
+
+            // Formspree para enviar o email
+            const data = new FormData(this);
+            const response = await fetch('https://formspree.io/f/xyzlzkoz', {
+                method: 'POST',
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            });
+            if (response.ok) {
+                document.getElementById('form-message').textContent = "Obrigado! Informação enviada.";
+                this.reset();
+            } else {
+                document.getElementById('form-message').textContent = "Erro ao enviar. Tente novamente.";
+            }
+        });
+
+        // Remove red underline when user starts typing
+        document.querySelectorAll('input[required]').forEach(function(input){
+            input.addEventListener('input', function(){
+                input.classList.remove('error');
+            });
+        });
+    </script>
+</body>
+</html>
